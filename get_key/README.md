@@ -54,19 +54,19 @@
 4. Login to aws ecr
 
    ```bash
-   $ aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 297535061769.dkr.ecr.us-east-1.amazonaws.com
+   $ aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin ${ACCOUNT_NUMBER}.dkr.ecr.us-east-1.amazonaws.com
    ```
 
 5. Create docker tag
 
    ```bash
-   $ docker tag  get_key_image:latest 297535061769.dkr.ecr.us-east-1.amazonaws.com/get_key_image:latest
+   $ docker tag  get_key_image:latest ${ACCOUNT_NUMBER}.dkr.ecr.us-east-1.amazonaws.com/get_key_image:latest
    ```
 
 6. Push docker image
 
    ```bash
-   $ docker push 297535061769.dkr.ecr.us-east-1.amazonaws.com/get_key_image:latest
+   $ docker push ${ACCOUNT_NUMBER}.dkr.ecr.us-east-1.amazonaws.com/get_key_image:latest
    ```
 
 For more information on deployments, refer to the [deployment docs](https://docs.aws.amazon.com/lambda/latest/dg/python-image.html#python-image-create).

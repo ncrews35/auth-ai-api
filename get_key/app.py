@@ -4,6 +4,8 @@ from db import DBTable
 
 
 def get_key(event, context):
+    print(event)
+    print(context)
     user_id = event.get('user')
     provider_id = event.get('provider')
 
